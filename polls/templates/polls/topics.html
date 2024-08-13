@@ -1,0 +1,22 @@
+{% include 'index.html' %}
+
+{% block content %}
+
+
+<form role="search" action="" method="get">
+    <input  type="text" placeholder="Search topics..." aria-label="Search" name="q">
+</form>
+
+
+<div>
+    <a href="{% url 'topics' %}">All</a> <span>{{topics.count}}</span>
+
+    {% for topic in topics %}
+    <div>
+        <a href="{% url 'home' %}?q={{topic.name}}"> {{topic}} </a> <span>{{topic.room_set.count}}</span>
+    </div>
+    {%endfor%}
+
+</div>
+
+{% endblock %}

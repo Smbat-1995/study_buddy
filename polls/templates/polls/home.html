@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block content %}
+  <body>
+    
+    <main class="layout layout--3">
+      <div class="container">
+        <!-- Topics Start -->
+        {% include 'polls/topics_component.html' %}
+        <!-- Topics End -->
+
+        <!-- Room List Start -->
+        {% include 'polls/room_component.html' %}
+        <!-- Room List End -->
+
+        <!-- Activities Start -->
+        {% include 'polls/activity_component.html' %}
+        <!-- Activities End -->
+        {% endblock %}
+      </div>
+    </main>
+    
+  </body>
+
