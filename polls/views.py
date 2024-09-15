@@ -32,7 +32,7 @@ def registerView(request):
 
 
 def loginView(request):
-
+    page = 'login'
     if request.method == 'POST':
 
         username = request.POST.get('username')
@@ -54,7 +54,7 @@ def loginView(request):
             messages.error(request, "Credentials is not valid")
 
         
-    return render(request , 'polls/login_register.html')
+    return render(request , 'polls/login_register.html',{'page':page})
 
 
 def logoutView(request):
